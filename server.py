@@ -4,8 +4,10 @@ from sqlite3 import connect
 import threading
 #threading is an essential for creating multiple thread
 
+HEADER = 64
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
+FORMAT= 'utf-8'
 #SERVER = "10.252.1.144"
 # print("SERVER CODE: ", socket.gethostname())
 
@@ -21,7 +23,8 @@ def handel_client(conn, addr):
     connected = True
 
     while connected:
-        msg = conn.recv(64)
+        msg_lenghth = conn.recv(HEADER).decode(FORMAT)
+
 
 
 def start():
