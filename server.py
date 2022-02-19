@@ -4,4 +4,6 @@ import threading
 
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
-#SERVER = "192.168.56.1"
+#SERVER = "10.252.1.144"
+# print("SERVER CODE: ", socket.gethostname())
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
